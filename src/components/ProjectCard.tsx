@@ -40,7 +40,7 @@ const ImageContainer = styled(Box)({
   height: 240
 });
 
-const ProjectImage = styled('img')(({ theme }) => ({
+const ProjectImage = styled('img')(() => ({
   width: '100%',
   height: '100%',
   objectFit: 'cover',

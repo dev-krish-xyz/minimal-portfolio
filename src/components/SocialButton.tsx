@@ -9,7 +9,7 @@ interface SocialButtonProps {
   size?: 'small' | 'medium' | 'large';
 }
 
-const StyledSocialButton = styled(IconButton)<{ buttonSize?: 'small' | 'medium' | 'large' }>(({ theme, buttonSize = 'medium' }) => {
+const StyledSocialButton = styled('button')<{ buttonSize?: 'small' | 'medium' | 'large' }>(({ theme, buttonSize = 'medium' }) => {
   const sizes = {
     small: { width: 48, height: 48 },
     medium: { width: 56, height: 56 },
@@ -19,7 +19,13 @@ const StyledSocialButton = styled(IconButton)<{ buttonSize?: 'small' | 'medium' 
   return {
     background: 'rgba(0, 0, 0, 0.05)',
     border: `1px solid ${theme.palette.grey[300]}`,
+    borderRadius: '50%',
     color: theme.palette.text.primary,
+    cursor: 'pointer',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textDecoration: 'none',
     ...sizes[buttonSize],
     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
     '&:hover': {
@@ -34,12 +40,15 @@ const StyledSocialButton = styled(IconButton)<{ buttonSize?: 'small' | 'medium' 
 const SocialButton: React.FC<SocialButtonProps> = ({ href, ariaLabel, children, size = 'medium' }) => {
   return (
     <StyledSocialButton
-      component="a"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={ariaLabel}
       buttonSize={size}
+      onClick={(e) => {
+        e.preventDefault();
+        window.open(href, '_blank', 'noopener,noreferrer');
+      }}
     >
       {children}
     </StyledSocialButton>
