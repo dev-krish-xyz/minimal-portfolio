@@ -1,0 +1,11 @@
+node_modules
+.git
+*.log
+.env
+.env.local
+.env.production
+.DS_Store
+src/**/*.test.ts
+src/**/*.test.tsx
+src/**/*.spec.ts
+src/**/*.spec.tsx
