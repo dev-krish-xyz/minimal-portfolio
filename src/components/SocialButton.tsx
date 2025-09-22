@@ -1,5 +1,4 @@
 import React from 'react';
-import { IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 interface SocialButtonProps {
@@ -40,13 +39,9 @@ const StyledSocialButton = styled('button')<{ buttonSize?: 'small' | 'medium' | 
 const SocialButton: React.FC<SocialButtonProps> = ({ href, ariaLabel, children, size = 'medium' }) => {
   return (
     <StyledSocialButton
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
       aria-label={ariaLabel}
       buttonSize={size}
-      onClick={(e) => {
-        e.preventDefault();
+      onClick={() => {
         window.open(href, '_blank', 'noopener,noreferrer');
       }}
     >
