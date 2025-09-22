@@ -1,11 +1,13 @@
 import React from 'react';
-import { Box, Typography, Stack, Avatar, IconButton } from '@mui/material';
+import { Box, Typography, Stack, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import SocialButton from './SocialButton';
+import GradientText from './GradientText';
 
 const LandingContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
@@ -64,28 +66,6 @@ const ContactCard = styled(Box)(({ theme }) => ({
   }
 }));
 
-const SocialButton = styled(IconButton)(({ theme }) => ({
-  background: 'rgba(0, 0, 0, 0.05)',
-  border: `1px solid ${theme.palette.grey[300]}`,
-  color: theme.palette.text.primary,
-  width: 48,
-  height: 48,
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  '&:hover': {
-    background: theme.palette.text.primary,
-    color: theme.palette.background.default,
-    transform: 'translateY(-2px) scale(1.05)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)'
-  }
-}));
-
-const AnimatedText = styled(Typography)(({ theme }) => ({
-  background: `linear-gradient(135deg, ${theme.palette.text.primary} 0%, ${theme.palette.grey[600]} 100%)`,
-  backgroundClip: 'text',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
-  animation: 'fadeInUp 1s ease-out'
-}));
 
 const LandingSection: React.FC = () => {
   return (
@@ -99,9 +79,15 @@ const LandingSection: React.FC = () => {
         </Box>
         
         <Stack spacing={1} sx={{ animation: 'fadeInUp 1s ease-out 0.2s both' }}>
-          <AnimatedText variant="h1" sx={{ fontSize: { xs: '2.5rem', md: '3.5rem' } }}>
+          <GradientText 
+            variant="h1" 
+            sx={{ 
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              animation: 'fadeInUp 1s ease-out'
+            }}
+          >
             Kalpataru Behera
-          </AnimatedText>
+          </GradientText>
           <Typography 
             variant="h4" 
             color="text.secondary"
@@ -146,31 +132,25 @@ const LandingSection: React.FC = () => {
             
             <Stack direction="row" spacing={2} justifyContent="center" sx={{ pt: 1 }}>
               <SocialButton 
-                component="a"
                 href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub Profile"
+                ariaLabel="GitHub Profile"
+                size="small"
               >
                 <GitHubIcon fontSize="small" />
               </SocialButton>
               
               <SocialButton 
-                component="a"
                 href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
+                ariaLabel="LinkedIn Profile"
+                size="small"
               >
                 <LinkedInIcon fontSize="small" />
               </SocialButton>
               
               <SocialButton 
-                component="a"
                 href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter Profile"
+                ariaLabel="Twitter Profile"
+                size="small"
               >
                 <TwitterIcon fontSize="small" />
               </SocialButton>

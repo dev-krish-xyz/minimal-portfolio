@@ -1,10 +1,8 @@
 import React from 'react';
-import { Box, Typography, Container, Stack, IconButton } from '@mui/material';
+import { Box, Typography, Container, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import GradientText from './GradientText';
+import ContactInfo from './ContactInfo';
 
 const ContactContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -29,60 +27,20 @@ const ContactCard = styled(Box)(({ theme }) => ({
   }
 }));
 
-const SocialButton = styled(IconButton)(({ theme }) => ({
-  background: 'rgba(0, 0, 0, 0.05)',
-  border: `1px solid ${theme.palette.grey[300]}`,
-  color: theme.palette.text.primary,
-  width: 56,
-  height: 56,
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  '&:hover': {
-    background: theme.palette.text.primary,
-    color: theme.palette.background.default,
-    transform: 'translateY(-2px) scale(1.05)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)'
-  }
-}));
 
-const EmailButton = styled(Box)(({ theme }) => ({
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: theme.spacing(2),
-  background: 'rgba(0, 0, 0, 0.05)',
-  border: `1px solid ${theme.palette.grey[300]}`,
-  borderRadius: '50px',
-  padding: theme.spacing(1.5, 3),
-  color: theme.palette.text.primary,
-  textDecoration: 'none',
-  fontSize: '1.1rem',
-  fontWeight: 500,
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-  cursor: 'pointer',
-  '&:hover': {
-    background: theme.palette.text.primary,
-    color: theme.palette.background.default,
-    transform: 'translateY(-2px)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)'
-  }
-}));
 
 const ContactSection: React.FC = () => {
   return (
     <ContactContainer id="contact">
       <Container maxWidth="lg">
         <Stack spacing={8} alignItems="center">
-          <Stack spacing={2} alignItems="center" textAlign="center">
-            <Typography 
+          <Stack spacing={2} alignItems="center" sx={{ textAlign: 'center' }}>
+            <GradientText 
               variant="h2"
-              sx={{ 
-                background: 'linear-gradient(135deg, #000000 0%, #495057 100%)',
-                backgroundClip: 'text',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent'
-              }}
+              gradient="linear-gradient(135deg, #000000 0%, #495057 100%)"
             >
               Let's Connect
-            </Typography>
+            </GradientText>
             <Typography 
               variant="body1" 
               color="text.secondary" 
@@ -94,55 +52,13 @@ const ContactSection: React.FC = () => {
           </Stack>
           
           <ContactCard>
-            <Stack spacing={4} alignItems="center">
-              <EmailButton 
-                component="a" 
-                href="mailto:enigmatic.coder.075@gmail.com"
-              >
-                <EmailOutlinedIcon />
-                enigmatic.coder.075@gmail.com
-              </EmailButton>
-              
-              <Stack direction="row" spacing={3}>
-                <SocialButton 
-                  component="a"
-                  href="https://github.com/dev-krish-xyz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub Profile"
-                >
-                  <GitHubIcon />
-                </SocialButton>
-                
-                <SocialButton 
-                  component="a"
-                  href="https://www.linkedin.com/in/kalpatarubehera/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn Profile"
-                >
-                  <LinkedInIcon />
-                </SocialButton>
-                
-                <SocialButton 
-                  component="a"
-                  href="https://x.com/krishdotdev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Twitter Profile"
-                >
-                  <CloseOutlinedIcon />
-                </SocialButton>
-              </Stack>
-              
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 2 }}>
-                Available for freelance opportunities and collaborations
-              </Typography>
-              
-              <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-                Phone: +91 7735643254
-              </Typography>
-            </Stack>
+            <ContactInfo
+              email="enigmatic.coder.075@gmail.com"
+              phone="+91 7735643254"
+              githubUrl="https://github.com/dev-krish-xyz"
+              linkedinUrl="https://www.linkedin.com/in/kalpatarubehera/"
+              twitterUrl="https://x.com/krishdotdev"
+            />
           </ContactCard>
         </Stack>
       </Container>

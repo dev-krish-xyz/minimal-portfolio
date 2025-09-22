@@ -78,7 +78,7 @@ const FloatingNavbar: React.FC = () => {
     handleScroll(); // Call once to set initial state
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [navItems]);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

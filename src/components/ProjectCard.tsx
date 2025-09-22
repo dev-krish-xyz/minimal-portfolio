@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardMedia, CardContent, Typography, Stack, IconButton, Box } from '@mui/material';
+import { Card, CardContent, Typography, Stack, IconButton, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -134,7 +134,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             {description}
           </Typography>
           
-          <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
+          <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap', gap: 1 }}>
             {technologies.map((tech, index) => (
               <TechChip key={index}>
                 {tech}
