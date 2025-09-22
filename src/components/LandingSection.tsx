@@ -133,7 +133,7 @@ const LandingSection: React.FC = () => {
             <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
               <EmailOutlinedIcon color="action" />
               <Typography variant="body2" color="text.secondary">
-                enigmatic.coder@gmail.com
+                enigmatic.coder.075@gmail.com
               </Typography>
             </Stack>
             

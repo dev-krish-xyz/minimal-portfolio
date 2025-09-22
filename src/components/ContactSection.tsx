@@ -97,10 +97,10 @@ const ContactSection: React.FC = () => {
             <Stack spacing={4} alignItems="center">
               <EmailButton 
                 component="a" 
-                href="mailto:enigmatic.coder@gmail.com"
+                href="mailto:enigmatic.coder.075@gmail.com"
               >
                 <EmailOutlinedIcon />
-                enigmatic.coder@gmail.com
+                enigmatic.coder.075@gmail.com
               </EmailButton>
               
               <Stack direction="row" spacing={3}>

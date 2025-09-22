@@ -137,7 +137,7 @@ const educationData: EducationItem[] = [
   },
   {
     institution: "FM University, Balasore",
-    degree: "Bachelor in Computer Science",
+    degree: "Bachelors in Computer Science",
     year: "2022 - 2025",
     description: "Comprehensive study of C, C++, Data Structures & Algorithms, JAVA, Computer Networking, Web Development, Discrete Mathematics, Operating Systems, Digital Logic, Computer Graphics, Software Engineering, Calculus, and Database Management Systems."
   },
