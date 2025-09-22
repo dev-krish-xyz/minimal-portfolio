@@ -93,7 +93,7 @@ const LandingSection: React.FC = () => {
       <LandingContent spacing={4}>
         <Box sx={{ animation: 'fadeInUp 1s ease-out' }}>
           <ProfileAvatar 
-            src="/images/goku-profile.jpg"
+            src="https://i.pravatar.cc/400?img=12"
             alt="Kalpataru Behera - Full Stack Developer"
           />
         </Box>
@@ -133,7 +133,7 @@ const LandingSection: React.FC = () => {
             <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
               <EmailOutlinedIcon color="action" />
               <Typography variant="body2" color="text.secondary">
-                enigmatic.coder.075@gmail.com
+                enigmatic.coder@gmail.com
               </Typography>
             </Stack>
             

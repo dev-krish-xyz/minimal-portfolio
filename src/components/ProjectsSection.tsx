@@ -11,7 +11,7 @@ const ProjectsContainer = styled(Box)(({ theme }) => ({
 
 const ProjectsGrid = styled(Box)(({ theme }) => ({
   display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
   gap: theme.spacing(4),
   [theme.breakpoints.down('sm')]: {
     gridTemplateColumns: '1fr',
