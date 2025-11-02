@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
@@ -7,6 +7,7 @@ import LandingSection from './LandingSection';
 import EducationSection from './EducationSection';
 import TechnicalSkillsSection from './TechnicalSkillsSection';
 import ProjectsSection from './ProjectsSection';
+import CertificationsSection from './CertificationsSection';
 import ContactSection from './ContactSection';
 import FloatingNavbar from './FloatingNavbar';
 
@@ -19,7 +20,7 @@ const createEmotionCache = () => {
 
 const emotionCache = createEmotionCache();
 
-const Portfolio: React.FC = () => {
+const Portfolio: FC = () => {
   return (
     <CacheProvider value={emotionCache}>
       <ThemeProvider theme={theme}>
@@ -28,6 +29,7 @@ const Portfolio: React.FC = () => {
         <EducationSection />
         <TechnicalSkillsSection />
         <ProjectsSection />
+        <CertificationsSection />
         <ContactSection />
         <FloatingNavbar />
       </ThemeProvider>

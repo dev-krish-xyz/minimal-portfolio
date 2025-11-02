@@ -1,5 +1,5 @@
-import React from 'react';
-import { Typography, TypographyProps } from '@mui/material';
+import { type FC } from 'react';
+import { Typography, type TypographyProps } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 interface GradientTextProps extends TypographyProps {
@@ -14,7 +14,7 @@ const StyledGradientText = styled(Typography)<{ gradientColors?: string }>(({ th
   display: 'inline-block'
 }));
 
-const GradientText: React.FC<GradientTextProps> = ({ gradient, children, ...props }) => {
+const GradientText: FC<GradientTextProps> = ({ gradient, children, ...props }) => {
   return (
     <StyledGradientText gradientColors={gradient} {...props}>
       {children}

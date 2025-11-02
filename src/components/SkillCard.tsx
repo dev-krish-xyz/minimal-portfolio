@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
@@ -53,7 +53,7 @@ const IconContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center'
 }));
 
-const SkillCard: React.FC<SkillCardProps> = ({ icon, name, level }) => {
+const SkillCard: FC<SkillCardProps> = ({ icon, name, level }) => {
   return (
     <StyledCard>
       <Stack spacing={2} alignItems="center">

@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Box, Typography, Container, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import GradientText from './GradientText';
@@ -29,7 +29,7 @@ const ContactCard = styled(Box)(({ theme }) => ({
 
 
 
-const ContactSection: React.FC = () => {
+const ContactSection: FC = () => {
   return (
     <ContactContainer id="contact">
       <Container maxWidth="lg">

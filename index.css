@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600;700&display=swap');
 
 :root {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Custom properties for consistent theming */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 #root {
@@ -87,33 +93,67 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Enhanced */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: #f8f9fa;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dee2e6;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #dee2e6 0%, #adb5bd 100%);
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #adb5bd;
+  background: linear-gradient(180deg, #adb5bd 0%, #6c757d 100%);
 }
 
-/* Selection color */
+/* Selection color - Enhanced */
 ::selection {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.15);
   color: #000000;
 }
 
-/* Focus styles for accessibility */
+::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #000000;
+}
+
+/* Focus styles for accessibility - Enhanced */
 button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #000000;
-  outline-offset: 2px;
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, 0.5);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+input,
+textarea {
+  transition: var(--transition-smooth);
+}
+
+/* Prevent layout shift */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Better text rendering */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
 }

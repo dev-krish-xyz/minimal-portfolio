@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Box, Typography, Container, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
@@ -8,6 +8,7 @@ interface EducationItem {
   degree: string;
   year: string;
   description: string;
+  grade?: string;
 }
 
 const EducationContainer = styled(Box)(({ theme }) => ({
@@ -18,19 +19,22 @@ const EducationContainer = styled(Box)(({ theme }) => ({
 
 const TimelineContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
-  maxWidth: '800px',
+  maxWidth: '900px',
   margin: '0 auto',
+  paddingTop: theme.spacing(4),
+  paddingBottom: theme.spacing(4),
   '&::before': {
     content: '""',
     position: 'absolute',
     left: '50%',
     top: 0,
     bottom: 0,
-    width: '2px',
+    width: '3px',
     background: `linear-gradient(to bottom, ${theme.palette.grey[300]}, ${theme.palette.grey[400]}, ${theme.palette.grey[300]})`,
     transform: 'translateX(-50%)',
     [theme.breakpoints.down('md')]: {
-      left: '30px'
+      left: '30px',
+      width: '2px'
     }
   }
 }));
@@ -139,17 +143,19 @@ const educationData: EducationItem[] = [
     institution: "FM University, Balasore",
     degree: "Bachelors in Computer Science",
     year: "2022 - 2025",
+    grade: "8.5 CGPA (85%)",
     description: "Comprehensive study of C, C++, Data Structures & Algorithms, JAVA, Computer Networking, Web Development, Discrete Mathematics, Operating Systems, Digital Logic, Computer Graphics, Software Engineering, Calculus, and Database Management Systems."
   },
   {
     institution: "FM Higher Secondary School, Balasore",
     degree: "12th Grade in Science (PCM + Information Technology)",
     year: "2019 - 2021",
+    grade: "89% (Grade A)",
     description: "Focused on Physics, Chemistry, Mathematics, and Information Technology. Built strong foundation in analytical thinking and problem-solving skills essential for computer science."
   }
 ];
 
-const EducationSection: React.FC = () => {
+const EducationSection: FC = () => {
   return (
     <EducationContainer id="education">
       <Container maxWidth="lg">
@@ -192,9 +198,32 @@ const EducationSection: React.FC = () => {
                       <Typography variant="subtitle1" color="primary.main" fontWeight="500">
                         {item.institution}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" fontWeight="500">
-                        {item.year}
-                      </Typography>
+                      <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
+                        <Typography variant="body2" color="text.secondary" fontWeight="500">
+                          {item.year}
+                        </Typography>
+                        {item.grade && (
+                          <>
+                            <Typography variant="body2" color="text.secondary">
+                              •
+                            </Typography>
+                            <Typography 
+                              variant="body2" 
+                              sx={{ 
+                                color: 'text.primary',
+                                fontWeight: 600,
+                                background: 'rgba(0, 0, 0, 0.05)',
+                                padding: '4px 12px',
+                                borderRadius: '8px',
+                                border: '1px solid',
+                                borderColor: 'grey.300'
+                              }}
+                            >
+                              {item.grade}
+                            </Typography>
+                          </>
+                        )}
+                      </Stack>
                       <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
                         {item.description}
                       </Typography>
@@ -209,9 +238,32 @@ const EducationSection: React.FC = () => {
                       <Typography variant="subtitle1" color="primary.main" fontWeight="500">
                         {item.institution}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" fontWeight="500">
-                        {item.year}
-                      </Typography>
+                      <Stack direction="row" spacing={2} alignItems="center" flexWrap="wrap">
+                        <Typography variant="body2" color="text.secondary" fontWeight="500">
+                          {item.year}
+                        </Typography>
+                        {item.grade && (
+                          <>
+                            <Typography variant="body2" color="text.secondary">
+                              •
+                            </Typography>
+                            <Typography 
+                              variant="body2" 
+                              sx={{ 
+                                color: 'text.primary',
+                                fontWeight: 600,
+                                background: 'rgba(0, 0, 0, 0.05)',
+                                padding: '4px 12px',
+                                borderRadius: '8px',
+                                border: '1px solid',
+                                borderColor: 'grey.300'
+                              }}
+                            >
+                              {item.grade}
+                            </Typography>
+                          </>
+                        )}
+                      </Stack>
                       <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6 }}>
                         {item.description}
                       </Typography>

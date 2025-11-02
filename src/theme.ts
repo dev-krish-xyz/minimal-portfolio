@@ -43,37 +43,39 @@ const theme = createTheme({
     divider: '#dee2e6'
   },
   typography: {
-    fontFamily: '"Inter", "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    fontFamily: '"Inter", "Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace',
     fontSize: 16,
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
     fontWeightBold: 700,
     h1: {
-      fontFamily: '"Space Grotesk", "Inter", sans-serif',
+      fontFamily: '"JetBrains Mono", "Roboto Mono", monospace',
       fontSize: '4rem',
       fontWeight: 700,
       lineHeight: 1.1,
-      letterSpacing: '-0.02em'
+      letterSpacing: '-0.01em'
     },
     h2: {
-      fontFamily: '"Space Grotesk", "Inter", sans-serif',
+      fontFamily: '"JetBrains Mono", "Roboto Mono", monospace',
       fontSize: '3rem',
       fontWeight: 600,
       lineHeight: 1.2,
-      letterSpacing: '-0.01em'
+      letterSpacing: '0em'
     },
     h3: {
-      fontFamily: '"Space Grotesk", "Inter", sans-serif',
+      fontFamily: '"JetBrains Mono", "Roboto Mono", monospace',
       fontSize: '2rem',
       fontWeight: 600,
-      lineHeight: 1.3
+      lineHeight: 1.3,
+      letterSpacing: '0em'
     },
     h4: {
-      fontFamily: '"Inter", sans-serif',
+      fontFamily: '"JetBrains Mono", "Roboto Mono", monospace',
       fontSize: '1.5rem',
       fontWeight: 500,
-      lineHeight: 1.4
+      lineHeight: 1.4,
+      letterSpacing: '0em'
     },
     body1: {
       fontFamily: '"Inter", sans-serif',

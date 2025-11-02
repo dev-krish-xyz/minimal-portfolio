@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import { type FC, useState, useEffect } from 'react';
 import { Box, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import WorkOutlinedIcon from '@mui/icons-material/WorkOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import HomeIcon from '@mui/icons-material/Home';
+import SchoolIcon from '@mui/icons-material/School';
+import CodeIcon from '@mui/icons-material/Code';
+import WorkIcon from '@mui/icons-material/Work';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+import EmailIcon from '@mui/icons-material/Email';
 
 interface NavItem {
   id: string;
@@ -36,12 +37,15 @@ const FloatingNav = styled(Box)(({ theme }) => ({
 }));
 
 const NavButton = styled(IconButton)<{ active?: boolean }>(({ theme, active }) => ({
-  width: 48,
-  height: 48,
+  width: 50,
+  height: 50,
   borderRadius: '50%',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   color: active ? theme.palette.background.default : theme.palette.text.secondary,
   background: active ? theme.palette.text.primary : 'transparent',
+  '& .MuiSvgIcon-root': {
+    fontSize: '1.4rem'
+  },
   '&:hover': {
     background: active ? theme.palette.text.primary : 'rgba(0, 0, 0, 0.05)',
     color: active ? theme.palette.background.default : theme.palette.text.primary,
@@ -50,14 +54,15 @@ const NavButton = styled(IconButton)<{ active?: boolean }>(({ theme, active }) =
 }));
 
 const navItems: NavItem[] = [
-  { id: 'home', icon: <HomeOutlinedIcon />, label: 'Home' },
-  { id: 'education', icon: <SchoolOutlinedIcon />, label: 'Education' },
-  { id: 'skills', icon: <CodeOutlinedIcon />, label: 'Skills' },
-  { id: 'projects', icon: <WorkOutlinedIcon />, label: 'Projects' },
-  { id: 'contact', icon: <EmailOutlinedIcon />, label: 'Contact' }
+  { id: 'home', icon: <HomeIcon />, label: 'Home' },
+  { id: 'education', icon: <SchoolIcon />, label: 'Education' },
+  { id: 'skills', icon: <CodeIcon />, label: 'Skills' },
+  { id: 'projects', icon: <WorkIcon />, label: 'Projects' },
+  { id: 'certifications', icon: <WorkspacePremiumIcon />, label: 'Certifications' },
+  { id: 'contact', icon: <EmailIcon />, label: 'Contact' }
 ];
 
-const FloatingNavbar: React.FC = () => {
+const FloatingNavbar: FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {

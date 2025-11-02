@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Box, Typography, Container, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ProjectCard from './ProjectCard';
@@ -23,25 +23,25 @@ const projects = [
   {
     title: "E-Commerce Platform",
     description: "A full-featured e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
-    image: "https://images.unsplash.com/photo-1592839930500-3445eb72b8ad?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHw4fHxlY29tbWVyY2UlMjBzaG9wcGluZyUyMHdlYnNpdGUlMjBvbmxpbmUlMjByZXRhaWx8ZW58MHwwfHx8MTc1ODExMzUwN3ww&ixlib=rb-4.1.0&q=85",
+    image: "https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg",
     imageAlt: "E-commerce website interface, online shopping platform, modern web design - Laura Chouette on Unsplash",
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
     technologies: ["React", "Node.js", "MongoDB", "Stripe", "TypeScript"]
   },
   {
-    title: "Analytics Dashboard",
+    title: "Extrack",
     description: "A comprehensive analytics dashboard with real-time data visualization, custom reporting, and interactive charts for business intelligence.",
-    image: "https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwyfHxkYXNoYm9hcmQlMjB3ZWIlMjBhcHBsaWNhdGlvbiUyMGludGVyZmFjZSUyMHNvZnR3YXJlfGVufDB8MHx8fDE3NTgxMTM1MDd8MA&ixlib=rb-4.1.0&q=85",
+    image: "https://uizard.io/static/d976ff1d2f51413207c7c944c5d3d563/0cfa7/ac6597f9ca9857740d4b2b5ee17ddc4557fd083e-1440x835.webp",
     imageAlt: "Modern web application dashboard interface, clean UI design, professional software - Growtika on Unsplash",
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
     technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
   },
   {
-    title: "Mobile Task Manager",
-    description: "A cross-platform mobile application for task management with offline sync, team collaboration, and smart notifications.",
-    image: "https://images.unsplash.com/photo-1621691187532-bbeb671757ac?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTAwNDR8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBzbWFydHBob25lJTIwaW50ZXJmYWNlJTIwYXBwbGljYXRpb258ZW58MHwxfHx8MTc1ODExMzUwN3ww&ixlib=rb-4.1.0&q=85",
+    title: "Taskio",
+    description: "An application for project management, project tracking, team collaboration, checklists, goals & deadlines and smart notifications.",
+    image: "https://www.cloudapper.ai/wp-content/uploads/custom_images/projects/device-1.png",
     imageAlt: "Mobile app interface, smartphone application, modern mobile design - Maccy on Unsplash",
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
@@ -49,7 +49,7 @@ const projects = [
   }
 ];
 
-const ProjectsSection: React.FC = () => {
+const ProjectsSection: FC = () => {
   return (
     <ProjectsContainer id="projects">
       <Container maxWidth="lg">

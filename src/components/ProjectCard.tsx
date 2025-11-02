@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Card, CardContent, Typography, Stack, IconButton, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import LaunchIcon from '@mui/icons-material/Launch';
@@ -87,7 +87,7 @@ const TechChip = styled(Box)(({ theme }) => ({
   }
 }));
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: FC<ProjectCardProps> = ({
   title,
   description,
   image,

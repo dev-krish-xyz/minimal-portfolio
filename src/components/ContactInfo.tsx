@@ -1,8 +1,8 @@
-import React from 'react';
+import { type FC } from 'react';
 import { Stack, Typography } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import SocialButton from './SocialButton';
 import EmailButton from './EmailButton';
 
@@ -14,7 +14,7 @@ interface ContactInfoProps {
   twitterUrl: string;
 }
 
-const ContactInfo: React.FC<ContactInfoProps> = ({
+const ContactInfo: FC<ContactInfoProps> = ({
   email,
   phone,
   githubUrl,
@@ -44,10 +44,10 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
         
         <SocialButton 
           href={twitterUrl}
-          ariaLabel="Twitter Profile"
+          ariaLabel="X (Twitter) Profile"
           size="medium"
         >
-          <TwitterIcon />
+          <XIcon />
         </SocialButton>
       </Stack>
       
