@@ -8,6 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import kalpa from "../images/Picsart_25-11-03_12-42-12-632.jpg";
 
 const LandingContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
@@ -135,7 +136,7 @@ const LandingSection: FC = () => {
       <LandingContent spacing={4} alignItems="center">
         <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <ProfileAvatar 
-            src="https://i.pravatar.cc/300?img=12"
+            src = {kalpa}
             alt="Kalpataru Behera"
           />
         </Box>
@@ -182,7 +183,7 @@ const LandingSection: FC = () => {
             }}
           >
             Passionate about creating scalable web solutions with modern technologies. 
-            Specializing in React, Node.js, and full-stack development.
+            Specializing in Node.js, Express.js,React and full-stack development.
           </Typography>
           
           <DownloadButton

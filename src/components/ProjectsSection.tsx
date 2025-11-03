@@ -21,32 +21,34 @@ const ProjectsGrid = styled(Box)(({ theme }) => ({
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
-    image: "https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg",
-    imageAlt: "E-commerce website interface, online shopping platform, modern web design - Laura Chouette on Unsplash",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "TypeScript"]
-  },
-  {
-    title: "Extrack",
-    description: "A comprehensive analytics dashboard with real-time data visualization, custom reporting, and interactive charts for business intelligence.",
-    image: "https://uizard.io/static/d976ff1d2f51413207c7c944c5d3d563/0cfa7/ac6597f9ca9857740d4b2b5ee17ddc4557fd083e-1440x835.webp",
-    imageAlt: "Modern web application dashboard interface, clean UI design, professional software - Growtika on Unsplash",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
-  },
-  {
     title: "Taskio",
     description: "An application for project management, project tracking, team collaboration, checklists, goals & deadlines and smart notifications.",
     image: "https://www.cloudapper.ai/wp-content/uploads/custom_images/projects/device-1.png",
     imageAlt: "Mobile app interface, smartphone application, modern mobile design - Maccy on Unsplash",
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
+    githubUrl: "https://github.com/dev-krish-xyz/taskio",
+    liveUrl: "https://github.com/dev-krish-xyz/taskio",
     technologies: ["React Native", "Firebase", "Redux", "Expo", "TypeScript"]
-  }
+  },
+   {
+    title: "Extrack",
+    description: "A comprehensive analytics dashboard with real-time data visualization, custom reporting, and interactive charts for business intelligence.",
+    image: "https://uizard.io/static/d976ff1d2f51413207c7c944c5d3d563/0cfa7/ac6597f9ca9857740d4b2b5ee17ddc4557fd083e-1440x835.webp",
+    imageAlt: "Modern web application dashboard interface, clean UI design, professional software - Growtika on Unsplash",
+    githubUrl: "https://github.com/dev-krish-xyz/extrack",
+    liveUrl: "https://github.com/dev-krish-xyz/extrack",
+    technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
+  },
+  {
+    title: "E-Commerce Platform",
+    description: "A full-featured e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
+    image: "https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg",
+    imageAlt: "E-commerce website interface, online shopping platform, modern web design - Laura Chouette on Unsplash",
+    githubUrl: "https://github.com/dev-krish-xyz/Ecommerce",
+    liveUrl: "https://github.com/dev-krish-xyz/Ecommerce",
+    technologies: ["React", "Node.js", "MongoDB", "Stripe", "TypeScript"]
+  },
+ 
+  
 ];
 
 const ProjectsSection: FC = () => {
