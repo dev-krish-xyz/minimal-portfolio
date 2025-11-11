@@ -27,7 +27,7 @@ const projects = [
     imageAlt: "Mobile app interface, smartphone application, modern mobile design - Maccy on Unsplash",
     githubUrl: "https://github.com/dev-krish-xyz/taskio",
     liveUrl: "https://github.com/dev-krish-xyz/taskio",
-    technologies: ["React Native", "Firebase", "Redux", "Expo", "TypeScript"]
+    technologies: ["Express.js", "JWT", "Oauth", "Rest API", "CRUD Ops"]
   },
    {
     title: "Extrack",
@@ -39,7 +39,7 @@ const projects = [
     technologies: ["React", "D3.js", "Python", "FastAPI", "PostgreSQL"]
   },
   {
-    title: "E-Commerce Platform",
+    title: "Shopify",
     description: "A full-featured e-commerce platform built with React and Node.js, featuring real-time inventory management, secure payments, and an intuitive admin dashboard.",
     image: "https://magesolution.com/wp-content/uploads/2022/07/ecommerce-website-design-examples-1024x768.jpg",
     imageAlt: "E-commerce website interface, online shopping platform, modern web design - Laura Chouette on Unsplash",

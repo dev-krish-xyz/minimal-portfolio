@@ -3,6 +3,7 @@ import { Box, Typography, Container, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import CertificationCard from './CertificationCard';
 import kalpataru from "../images/Kalpataru_Behera_decode_DSA.jpg";
+import cert from "../images/screenshot-2025-11-11_14-57-15.png";
 
 const CertificationsContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(12, 0),
@@ -26,7 +27,7 @@ const certifications = [
     issuer: "Oracle University",
     date: "October 2025",
     description: "Learn the fundamentals of LLMs and Generative AI on OCI, covering model architectures, fine-tuning, and prompt engineering. Build and deploy a LangChain-based chatbot using RAG, vector databases, and semantic search on OCI.",
-    image: "https://i0.wp.com/techtrantor.com/wp-content/uploads/2024/01/image.png?fit=770%2C450&ssl=1",
+    image: cert,
     imageAlt: "nothing",
     credentialUrl: "https://mylearn.oracle.com",
     skills: ["GenAI", "Transformers", "Langchain", "RAG", "fine-tuning", "Vector DB"]
@@ -71,6 +72,7 @@ const certifications = [
     credentialUrl: "https://pwskills.com/",
     skills: ["C++", "Problem Solving", "DSA", "Code Optimization"]
   },
+  
 
 ];
 
