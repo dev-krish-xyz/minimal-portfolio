@@ -182,7 +182,7 @@ const LandingSection: FC = () => {
               animation: 'fadeInUp 0.8s ease-out 0.4s both'
             }}
           >
-            Passionate about creating scalable web solutions with modern technologies. 
+            I create scalable web solutions with modern technologies with AI integration.
             Specializing in Node.js, Express.js,React and full-stack development.
           </Typography>
           
