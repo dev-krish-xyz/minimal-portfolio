@@ -4,19 +4,26 @@ import { styled } from '@mui/material/styles';
 
 // Import Material-UI icons for tech stack
 import CopyrightOutlinedIcon from '@mui/icons-material/CopyrightOutlined';
-import SettingsBluetoothOutlinedIcon from '@mui/icons-material/SettingsBluetoothOutlined';
-import ApiOutlinedIcon from '@mui/icons-material/ApiOutlined';
-import CodeOutlinedIcon from '@mui/icons-material/CodeOutlined';
-import BlurCircularOutlinedIcon from '@mui/icons-material/BlurCircularOutlined';
 import HexagonOutlinedIcon from '@mui/icons-material/HexagonOutlined';
+import ApiOutlinedIcon from '@mui/icons-material/ApiOutlined';
+import JavascriptOutlinedIcon from '@mui/icons-material/JavascriptOutlined';
+import TextFieldsOutlinedIcon from '@mui/icons-material/TextFieldsOutlined';
 import DnsOutlinedIcon from '@mui/icons-material/DnsOutlined';
-import DynamicFormOutlinedIcon from '@mui/icons-material/DynamicFormOutlined';
-import AccountBalanceWalletOutlinedIcon from '@mui/icons-material/AccountBalanceWalletOutlined';
-import StreamOutlinedIcon from '@mui/icons-material/StreamOutlined';
-import StorageOutlinedIcon from '@mui/icons-material/StorageOutlined';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TerminalOutlinedIcon from '@mui/icons-material/TerminalOutlined';
-import PsychologyOutlinedIcon from '@mui/icons-material/PsychologyOutlined';
+import RocketLaunchOutlinedIcon from '@mui/icons-material/RocketLaunchOutlined';
+import HdrWeakOutlinedIcon from '@mui/icons-material/HdrWeakOutlined';
+import WavesOutlinedIcon from '@mui/icons-material/WavesOutlined';
+import FlashOnOutlinedIcon from '@mui/icons-material/FlashOnOutlined';
+import SortOutlinedIcon from '@mui/icons-material/SortOutlined';
+import DeviceHubOutlinedIcon from '@mui/icons-material/DeviceHubOutlined';
+import AodOutlinedIcon from '@mui/icons-material/AodOutlined';
+import EnergySavingsLeafOutlinedIcon from '@mui/icons-material/EnergySavingsLeafOutlined';
+import Person4OutlinedIcon from '@mui/icons-material/Person4Outlined';
+import OpacityOutlinedIcon from '@mui/icons-material/OpacityOutlined';
+import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
+import SmartToyOutlinedIcon from '@mui/icons-material/SmartToyOutlined';
+import DirectionsBoatFilledOutlinedIcon from '@mui/icons-material/DirectionsBoatFilledOutlined';
+import MergeTypeOutlinedIcon from '@mui/icons-material/MergeTypeOutlined';
+import AdbOutlinedIcon from '@mui/icons-material/AdbOutlined';
 
 interface Skill {
   name: string;
@@ -148,53 +155,54 @@ const skillCategories: SkillCategory[] = [
     title: "Programming Languages",
     skills: [
       { name: "C", icon: <CopyrightOutlinedIcon />, color: "#A8B9CC", level: "Advanced" },
-      { name: "C++", icon: <SettingsBluetoothOutlinedIcon />, color: "#00599C", level: "Intermediate" },
+      { name: "C++", icon: <HexagonOutlinedIcon />, color: "#00599C", level: "Intermediate" },
       { name: "Python", icon: <ApiOutlinedIcon />, color: "#3776AB", level: "Beginner" },
-      { name: "JavaScript", icon: <CodeOutlinedIcon />, color: "#F7DF1E", level: "Advanced" },
-      { name: "TypeScript", icon: <CodeOutlinedIcon />, color: "#3178C6", level: "Intermediate" },
+      { name: "JavaScript", icon: <JavascriptOutlinedIcon />, color: "#F7DF1E", level: "Advanced" },
+      { name: "TypeScript", icon: <TextFieldsOutlinedIcon />, color: "#3178C6", level: "Intermediate" },
       { name: "SQL", icon: <DnsOutlinedIcon />, color: "#4479A1", level: "Intermediate" }
     ]
   },
   {
     title: "Frontend Development",
     skills: [
-      { name: "React.js", icon: <BlurCircularOutlinedIcon />, color: "#61DAFB", level: "Beginner" },
-      { name: "shadcn", icon: <AccountBalanceWalletOutlinedIcon />, color: "#000000", level: "Intermediate" },
-      { name: "TailwindCSS", icon: <StreamOutlinedIcon />, color: "#06B6D4", level: "Intermediate" }
+      { name: "React.js", icon: <RocketLaunchOutlinedIcon />, color: "#61DAFB", level: "Beginner" },
+      { name: "Next.js", icon: <FlashOnOutlinedIcon />, color: "#000000", level: "Intermediate" },
+      { name: "shadcn", icon: <HdrWeakOutlinedIcon />, color: "#000000", level: "Intermediate" },
+      { name: "TailwindCSS", icon: <WavesOutlinedIcon />, color: "#06B6D4", level: "Intermediate" }
     ]
   },
   {
     title: "Backend Development",
     skills: [
       { name: "Node.js", icon: <HexagonOutlinedIcon />, color: "#339933", level: "Intermediate" },
-      { name: "Express.js", icon: <DnsOutlinedIcon />, color: "#000000", level: "Intermediate" },
-      { name: "REST APIs", icon: <ApiOutlinedIcon />, color: "#FF6B35", level: "Intermediate" }
+      { name: "Express.js", icon: <SortOutlinedIcon />, color: "#000000", level: "Intermediate" },
+      { name: "REST APIs", icon: <DeviceHubOutlinedIcon />, color: "#FF6B35", level: "Intermediate" }
     ]
   },
   {
     title: "Databases & ORMs",
     skills: [
-      { name: "MySQL", icon: <DnsOutlinedIcon />, color: "#4479A1", level: "Intermediate" },
+      { name: "MySQL", icon: <AodOutlinedIcon />, color: "#4479A1", level: "Intermediate" },
       { name: "PostgreSQL", icon: <DnsOutlinedIcon />, color: "#336791", level: "Intermediate" },
-      { name: "MongoDB", icon: <DynamicFormOutlinedIcon />, color: "#47A248", level: "Intermediate" },
-      { name: "Prisma", icon: <AccountBalanceWalletOutlinedIcon />, color: "#2D3748", level: "Intermediate" },
-      { name: "Mongoose", icon: <DynamicFormOutlinedIcon />, color: "#880000", level: "Intermediate" },
-      { name: "Drizzle", icon: <StreamOutlinedIcon />, color: "#C5F74F", level: "Intermediate" }
+      { name: "MongoDB", icon: <EnergySavingsLeafOutlinedIcon />, color: "#47A248", level: "Intermediate" },
+      { name: "Prisma", icon: <Person4OutlinedIcon />, color: "#2D3748", level: "Intermediate" },
+      { name: "Mongoose", icon: <HexagonOutlinedIcon />, color: "#880000", level: "Intermediate" },
+      { name: "Drizzle", icon: <OpacityOutlinedIcon />, color: "#C5F74F", level: "Intermediate" }
     ]
   },
   {
     title: "AI & Machine Learning",
     skills: [
-      { name: "LangChain", icon: <ApiOutlinedIcon />, color: "#1C3C3C", level: "Beginner" },
-      { name: "GenAI", icon: <PsychologyOutlinedIcon />, color: "#8E44AD", level: "Beginner" }
+      { name: "LangChain", icon: <LinkOutlinedIcon />, color: "#1C3C3C", level: "Beginner" },
+      { name: "GenAI", icon: <SmartToyOutlinedIcon />, color: "#8E44AD", level: "Beginner" }
     ]
   },
   {
     title: "DevOps & Tools",
     skills: [
-      { name: "Docker", icon: <StorageOutlinedIcon />, color: "#2496ED", level: "Intermediate" },
-      { name: "Git", icon: <GitHubIcon />, color: "#F05032", level: "Advanced" },
-      { name: "Linux", icon: <TerminalOutlinedIcon />, color: "#FCC624", level: "Advanced" }
+      { name: "Docker", icon: <DirectionsBoatFilledOutlinedIcon />, color: "#2496ED", level: "Intermediate" },
+      { name: "Git", icon: <MergeTypeOutlinedIcon />, color: "#F05032", level: "Advanced" },
+      { name: "Linux", icon: <AdbOutlinedIcon />, color: "#FCC624", level: "Advanced" }
     ]
   }
 ];

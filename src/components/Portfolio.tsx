@@ -4,8 +4,10 @@ import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import theme from '../theme';
 import LandingSection from './LandingSection';
+import AboutSection from './AboutSection';
 import EducationSection from './EducationSection';
 import TechnicalSkillsSection from './TechnicalSkillsSection';
+import SoftSkillsSection from './SoftSkillsSection';
 import ProjectsSection from './ProjectsSection';
 import CertificationsSection from './CertificationsSection';
 import ContactSection from './ContactSection';
@@ -26,8 +28,10 @@ const Portfolio: FC = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <LandingSection />
+        <AboutSection />
         <EducationSection />
         <TechnicalSkillsSection />
+        <SoftSkillsSection />
         <ProjectsSection />
         <CertificationsSection />
         <ContactSection />
