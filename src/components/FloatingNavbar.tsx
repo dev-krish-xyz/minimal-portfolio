@@ -21,10 +21,10 @@ const FloatingNav = styled(Box)(({ theme }) => ({
   transform: 'translateX(-50%)',
   background: theme.palette.mode === 'light'
     ? 'rgba(255, 255, 255, 0.95)'
-    : 'rgba(30, 30, 30, 0.95)',
+    : 'rgba(22, 26, 31, 0.95)',
   backdropFilter: 'blur(20px)',
   WebkitBackdropFilter: 'blur(20px)',
-  border: `2px solid ${theme.palette.divider}`,
+  border: `1px solid ${theme.palette.divider}`,
   borderRadius: '50px',
   padding: theme.spacing(1, 1.5),
   display: 'flex',
@@ -32,30 +32,30 @@ const FloatingNav = styled(Box)(({ theme }) => ({
   justifyContent: 'center',
   gap: theme.spacing(1),
   boxShadow: theme.palette.mode === 'light'
-    ? '0 8px 32px rgba(0, 0, 0, 0.12)'
-    : '0 8px 32px rgba(0, 0, 0, 0.6)',
+    ? '0 4px 16px rgba(0, 0, 0, 0.08)'
+    : '0 4px 16px rgba(0, 0, 0, 0.4)',
   zIndex: 1000,
-  transition: 'all 0.3s ease',
-  maxWidth: 'calc(100vw - 32px)',
+  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
   width: 'auto',
   '&:hover': {
     boxShadow: theme.palette.mode === 'light'
-      ? '0 12px 40px rgba(0, 0, 0, 0.18)'
-      : '0 12px 40px rgba(0, 0, 0, 0.7)',
-    transform: 'translateX(-50%) translateY(-3px)'
+      ? '0 6px 24px rgba(0, 0, 0, 0.12)'
+      : '0 6px 24px rgba(0, 0, 0, 0.5)',
+    transform: 'translateX(-50%) translateY(-2px)'
   },
   [theme.breakpoints.down('md')]: {
     bottom: 16,
     padding: theme.spacing(0.75, 1.25),
-    gap: theme.spacing(0.75),
-    maxWidth: 'calc(100vw - 24px)'
+    gap: theme.spacing(0.75)
   },
   [theme.breakpoints.down('sm')]: {
     bottom: 12,
     padding: theme.spacing(0.6, 1),
     gap: theme.spacing(0.5),
-    maxWidth: 'calc(100vw - 16px)',
-    borderWidth: '1.5px'
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: 'auto',
+    maxWidth: 'calc(100vw - 24px)'
   }
 }));
 
@@ -65,28 +65,28 @@ const NavButton = styled(IconButton)<{ active?: boolean }>(({ theme, active }) =
   minWidth: 48,
   minHeight: 48,
   borderRadius: '50%',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
   flexShrink: 0,
   padding: 0,
   color: active 
-    ? theme.palette.mode === 'light' ? '#ffffff' : '#121212'
+    ? theme.palette.mode === 'light' ? '#ffffff' : '#0f1115'
     : theme.palette.text.secondary,
   background: active 
-    ? theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
+    ? theme.palette.mode === 'light' ? '#000000' : '#e6e8eb'
     : 'transparent',
   '& .MuiSvgIcon-root': {
     fontSize: '1.3rem'
   },
   '&:hover': {
     background: active 
-      ? theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
+      ? theme.palette.mode === 'light' ? '#000000' : '#e6e8eb'
       : theme.palette.mode === 'light' 
-        ? 'rgba(0, 0, 0, 0.06)' 
-        : 'rgba(255, 255, 255, 0.08)',
+        ? 'rgba(0, 0, 0, 0.04)' 
+        : 'rgba(230, 232, 235, 0.08)',
     color: active 
-      ? theme.palette.mode === 'light' ? '#ffffff' : '#121212'
+      ? theme.palette.mode === 'light' ? '#ffffff' : '#0f1115'
       : theme.palette.text.primary,
-    transform: 'scale(1.08)'
+    transform: 'scale(1.05)'
   },
   [theme.breakpoints.down('md')]: {
     width: 44,
@@ -98,12 +98,12 @@ const NavButton = styled(IconButton)<{ active?: boolean }>(({ theme, active }) =
     }
   },
   [theme.breakpoints.down('sm')]: {
-    width: 38,
-    height: 38,
-    minWidth: 38,
-    minHeight: 38,
+    width: 40,
+    height: 40,
+    minWidth: 40,
+    minHeight: 40,
     '& .MuiSvgIcon-root': {
-      fontSize: '1.05rem'
+      fontSize: '1.1rem'
     }
   }
 }));

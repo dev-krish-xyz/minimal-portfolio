@@ -92,57 +92,64 @@ const ProfileAvatar = styled(Avatar)(({ theme }) => ({
 const SocialIconButton = styled('a')(({ theme }) => ({
   width: 48,
   height: 48,
+  minWidth: 48,
+  minHeight: 48,
   background: theme.palette.mode === 'light'
-    ? 'rgba(0, 0, 0, 0.05)'
-    : 'rgba(255, 255, 255, 0.08)',
-  border: `2px solid ${theme.palette.divider}`,
+    ? 'rgba(0, 0, 0, 0.04)'
+    : 'rgba(230, 232, 235, 0.06)',
+  border: `1px solid ${theme.palette.divider}`,
   borderRadius: '50%',
   color: theme.palette.text.primary,
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   textDecoration: 'none',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
   cursor: 'pointer',
   flexShrink: 0,
   '&:hover': {
-    background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
-    color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
-    transform: 'translateY(-3px) scale(1.08)',
+    background: theme.palette.mode === 'light' 
+      ? 'rgba(0, 0, 0, 0.08)' 
+      : 'rgba(230, 232, 235, 0.12)',
+    transform: 'translateY(-2px)',
     boxShadow: theme.palette.mode === 'light'
-      ? '0 8px 25px rgba(0, 0, 0, 0.15)'
-      : '0 8px 25px rgba(255, 255, 255, 0.1)',
-    borderColor: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
+      ? '0 4px 12px rgba(0, 0, 0, 0.1)'
+      : '0 4px 12px rgba(0, 0, 0, 0.4)',
+    borderColor: theme.palette.mode === 'light' 
+      ? 'rgba(0, 0, 0, 0.12)' 
+      : 'rgba(230, 232, 235, 0.2)'
   },
   [theme.breakpoints.down('sm')]: {
     width: 40,
     height: 40,
-    '& svg': {
-      fontSize: '1.2rem'
-    }
+    minWidth: 40,
+    minHeight: 40
   }
 }));
 
 const ActionButton = styled(Button)(({ theme }) => ({
   background: theme.palette.mode === 'light'
-    ? 'rgba(0, 0, 0, 0.05)'
-    : 'rgba(255, 255, 255, 0.08)',
-  border: `2px solid ${theme.palette.divider}`,
+    ? 'rgba(0, 0, 0, 0.04)'
+    : 'rgba(230, 232, 235, 0.06)',
+  border: `1px solid ${theme.palette.divider}`,
   borderRadius: '50px',
   padding: theme.spacing(1.5, 3),
   color: theme.palette.text.primary,
   fontSize: '1rem',
   fontWeight: 600,
   textTransform: 'none',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
   '&:hover': {
-    background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
-    color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
-    transform: 'translateY(-3px)',
+    background: theme.palette.mode === 'light' 
+      ? 'rgba(0, 0, 0, 0.08)' 
+      : 'rgba(230, 232, 235, 0.12)',
+    transform: 'translateY(-2px)',
     boxShadow: theme.palette.mode === 'light'
-      ? '0 8px 25px rgba(0, 0, 0, 0.2)'
-      : '0 8px 25px rgba(255, 255, 255, 0.1)',
-    borderColor: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
+      ? '0 4px 12px rgba(0, 0, 0, 0.1)'
+      : '0 4px 12px rgba(0, 0, 0, 0.4)',
+    borderColor: theme.palette.mode === 'light' 
+      ? 'rgba(0, 0, 0, 0.12)' 
+      : 'rgba(230, 232, 235, 0.2)'
   },
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(1.25, 2.5),
@@ -151,29 +158,33 @@ const ActionButton = styled(Button)(({ theme }) => ({
 }));
 
 const DownloadButton = styled(Button)(({ theme }) => ({
-  background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
-  border: `2px solid ${theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'}`,
+  background: theme.palette.mode === 'light' 
+    ? '#000000' 
+    : 'rgba(230, 232, 235, 0.12)',
+  border: `1px solid ${theme.palette.mode === 'light' 
+    ? '#000000' 
+    : 'rgba(230, 232, 235, 0.2)'}`,
   borderRadius: '50px',
   padding: theme.spacing(1.5, 3.5),
-  color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
+  color: theme.palette.mode === 'light' ? '#ffffff' : '#e6e8eb',
   fontSize: '1rem',
   fontWeight: 600,
   textTransform: 'none',
-  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  transition: 'all 200ms cubic-bezier(0.4, 0, 0.2, 1)',
   boxShadow: theme.palette.mode === 'light'
-    ? '0 4px 12px rgba(0, 0, 0, 0.15)'
-    : '0 4px 12px rgba(224, 224, 224, 0.15)',
+    ? '0 2px 8px rgba(0, 0, 0, 0.1)'
+    : '0 2px 8px rgba(0, 0, 0, 0.3)',
   '&:hover': {
     background: theme.palette.mode === 'light' 
       ? '#1a1a1a' 
-      : '#f5f5f5',
+      : 'rgba(230, 232, 235, 0.18)',
     borderColor: theme.palette.mode === 'light' 
       ? '#1a1a1a' 
-      : '#f5f5f5',
-    transform: 'translateY(-4px)',
+      : 'rgba(230, 232, 235, 0.3)',
+    transform: 'translateY(-2px)',
     boxShadow: theme.palette.mode === 'light'
-      ? '0 12px 35px rgba(0, 0, 0, 0.25)'
-      : '0 12px 35px rgba(224, 224, 224, 0.25)'
+      ? '0 6px 20px rgba(0, 0, 0, 0.15)'
+      : '0 6px 20px rgba(0, 0, 0, 0.5)'
   },
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(1.25, 2.5),
@@ -253,38 +264,63 @@ const LandingSection: FC = () => {
         </Stack>
         
         <Box sx={{ 
-          background: 'rgba(248, 249, 250, 0.6)',
+          background: (theme) => theme.palette.mode === 'light'
+            ? 'rgba(248, 249, 250, 0.8)'
+            : 'rgba(27, 31, 38, 0.8)',
           backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
           borderRadius: 4, 
-          padding: { xs: 3, sm: 4, md: 5 },
+          padding: { xs: 2.5, sm: 3.5, md: 4.5 },
           border: '1px solid',
-          borderColor: 'grey.200',
-          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
-          transition: 'all 0.3s ease',
+          borderColor: 'divider',
+          boxShadow: (theme) => theme.palette.mode === 'light'
+            ? '0 8px 32px rgba(0, 0, 0, 0.08)'
+            : '0 8px 32px rgba(0, 0, 0, 0.4)',
+          transition: 'all 250ms cubic-bezier(0.4, 0, 0.2, 1)',
           animation: 'fadeInUp 0.8s ease-out 0.6s both',
           width: '100%',
-          maxWidth: '650px',
+          maxWidth: { xs: '100%', sm: '600px', md: '650px' },
           '&:hover': {
             transform: 'translateY(-4px)',
-            boxShadow: '0 12px 40px rgba(0, 0, 0, 0.12)'
+            boxShadow: (theme) => theme.palette.mode === 'light'
+              ? '0 12px 40px rgba(0, 0, 0, 0.12)'
+              : '0 12px 40px rgba(0, 0, 0, 0.5)'
           }
         }}>
-          <Stack spacing={3}>
-            <Typography variant="h5" color="text.primary" fontWeight="600" textAlign="center">
+          <Stack spacing={{ xs: 2.5, sm: 3 }}>
+            <Typography 
+              variant="h5" 
+              color="text.primary" 
+              fontWeight="600" 
+              textAlign="center"
+              sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}
+            >
               Let's Connect
             </Typography>
             
             <Stack spacing={2}>
-              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-                <EmailOutlinedIcon sx={{ color: 'primary.main', fontSize: 24 }} />
+              <Stack 
+                direction="row" 
+                spacing={{ xs: 1.5, sm: 2 }} 
+                alignItems="center" 
+                justifyContent="center"
+                sx={{ flexWrap: 'wrap' }}
+              >
+                <EmailOutlinedIcon sx={{ 
+                  color: 'primary.main', 
+                  fontSize: { xs: 20, sm: 24 },
+                  flexShrink: 0
+                }} />
                 <Typography 
-                  variant="body1" 
+                  variant="body2" 
                   color="text.secondary"
                   component="a"
                   href="mailto:enigmatic.coder.075@gmail.com"
                   sx={{ 
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 200ms ease',
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
+                    wordBreak: 'break-all',
                     '&:hover': { 
                       color: 'primary.main',
                       transform: 'translateX(4px)'
@@ -295,16 +331,26 @@ const LandingSection: FC = () => {
                 </Typography>
               </Stack>
               
-              <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
-                <PhoneIphoneOutlinedIcon sx={{ color: 'primary.main', fontSize: 24 }} />
+              <Stack 
+                direction="row" 
+                spacing={{ xs: 1.5, sm: 2 }} 
+                alignItems="center" 
+                justifyContent="center"
+              >
+                <PhoneIphoneOutlinedIcon sx={{ 
+                  color: 'primary.main', 
+                  fontSize: { xs: 20, sm: 24 },
+                  flexShrink: 0
+                }} />
                 <Typography 
-                  variant="body1" 
+                  variant="body2" 
                   color="text.secondary"
                   component="a"
                   href="tel:+917735643254"
                   sx={{ 
                     textDecoration: 'none',
-                    transition: 'all 0.2s ease',
+                    transition: 'all 200ms ease',
+                    fontSize: { xs: '0.875rem', sm: '1rem' },
                     '&:hover': { 
                       color: 'primary.main',
                       transform: 'translateX(4px)'
@@ -316,15 +362,20 @@ const LandingSection: FC = () => {
               </Stack>
             </Stack>
             
-            <Stack spacing={3} alignItems="center" sx={{ width: '100%' }}>
-              <Stack direction="row" spacing={2} justifyContent="center">
+            <Stack spacing={{ xs: 2.5, sm: 3 }} alignItems="center" sx={{ width: '100%', pt: 1 }}>
+              <Stack 
+                direction="row" 
+                spacing={{ xs: 1.5, sm: 2 }} 
+                justifyContent="center"
+                sx={{ flexWrap: 'wrap', gap: { xs: 1.5, sm: 2 } }}
+              >
                 <SocialIconButton 
                   href="https://github.com/dev-krish-xyz"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
                 >
-                  <GitHubIcon sx={{ fontSize: 24 }} />
+                  <GitHubIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
                 </SocialIconButton>
                 <SocialIconButton 
                   href="https://www.linkedin.com/in/kalpatarubehera/"
@@ -332,7 +383,7 @@ const LandingSection: FC = () => {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
                 >
-                  <LinkedInIcon sx={{ fontSize: 24 }} />
+                  <LinkedInIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
                 </SocialIconButton>
                 <SocialIconButton 
                   href="https://x.com/krishdotdev"
@@ -340,7 +391,7 @@ const LandingSection: FC = () => {
                   rel="noopener noreferrer"
                   aria-label="X (Twitter) Profile"
                 >
-                  <XIcon sx={{ fontSize: 24 }} />
+                  <XIcon sx={{ fontSize: { xs: 20, sm: 24 } }} />
                 </SocialIconButton>
               </Stack>
               
