@@ -4,39 +4,46 @@ export const getTheme = (mode: PaletteMode) => createTheme({
   palette: {
     mode,
     primary: {
-      main: mode === 'light' ? '#000000' : '#ffffff',
-      light: mode === 'light' ? '#212529' : '#e9ecef',
-      dark: mode === 'light' ? '#000000' : '#ffffff',
-      contrastText: mode === 'light' ? '#ffffff' : '#000000'
+      main: mode === 'light' ? '#000000' : '#e0e0e0',
+      light: mode === 'light' ? '#212529' : '#f5f5f5',
+      dark: mode === 'light' ? '#000000' : '#bdbdbd',
+      contrastText: mode === 'light' ? '#ffffff' : '#121212'
     },
     secondary: {
-      main: mode === 'light' ? '#6c757d' : '#adb5bd',
-      light: mode === 'light' ? '#adb5bd' : '#ced4da',
-      dark: mode === 'light' ? '#495057' : '#6c757d',
-      contrastText: '#ffffff'
+      main: mode === 'light' ? '#6c757d' : '#90a4ae',
+      light: mode === 'light' ? '#adb5bd' : '#b0bec5',
+      dark: mode === 'light' ? '#495057' : '#607d8b',
+      contrastText: mode === 'light' ? '#ffffff' : '#121212'
     },
     text: {
-      primary: mode === 'light' ? '#000000' : '#ffffff',
-      secondary: mode === 'light' ? '#495057' : '#adb5bd',
-      disabled: mode === 'light' ? '#adb5bd' : '#6c757d'
+      primary: mode === 'light' ? '#000000' : '#e0e0e0',
+      secondary: mode === 'light' ? '#495057' : '#b0bec5',
+      disabled: mode === 'light' ? '#adb5bd' : '#757575'
     },
     background: {
-      default: mode === 'light' ? '#ffffff' : '#0a0a0a',
-      paper: mode === 'light' ? '#f8f9fa' : '#1a1a1a'
+      default: mode === 'light' ? '#ffffff' : '#121212',
+      paper: mode === 'light' ? '#f8f9fa' : '#1e1e1e'
     },
     grey: {
-      50: mode === 'light' ? '#f8f9fa' : '#1a1a1a',
-      100: mode === 'light' ? '#e9ecef' : '#212529',
-      200: mode === 'light' ? '#dee2e6' : '#343a40',
-      300: mode === 'light' ? '#ced4da' : '#495057',
-      400: mode === 'light' ? '#adb5bd' : '#6c757d',
-      500: '#6c757d',
-      600: mode === 'light' ? '#495057' : '#adb5bd',
-      700: mode === 'light' ? '#343a40' : '#ced4da',
-      800: mode === 'light' ? '#212529' : '#dee2e6',
-      900: mode === 'light' ? '#000000' : '#f8f9fa'
+      50: mode === 'light' ? '#f8f9fa' : '#1e1e1e',
+      100: mode === 'light' ? '#e9ecef' : '#252525',
+      200: mode === 'light' ? '#dee2e6' : '#2c2c2c',
+      300: mode === 'light' ? '#ced4da' : '#383838',
+      400: mode === 'light' ? '#adb5bd' : '#4a4a4a',
+      500: mode === 'light' ? '#6c757d' : '#6c757d',
+      600: mode === 'light' ? '#495057' : '#9e9e9e',
+      700: mode === 'light' ? '#343a40' : '#b0b0b0',
+      800: mode === 'light' ? '#212529' : '#d0d0d0',
+      900: mode === 'light' ? '#000000' : '#e0e0e0'
     },
-    divider: mode === 'light' ? '#dee2e6' : '#343a40'
+    divider: mode === 'light' ? '#dee2e6' : '#2c2c2c',
+    action: {
+      active: mode === 'light' ? 'rgba(0, 0, 0, 0.54)' : 'rgba(255, 255, 255, 0.7)',
+      hover: mode === 'light' ? 'rgba(0, 0, 0, 0.04)' : 'rgba(255, 255, 255, 0.08)',
+      selected: mode === 'light' ? 'rgba(0, 0, 0, 0.08)' : 'rgba(255, 255, 255, 0.16)',
+      disabled: mode === 'light' ? 'rgba(0, 0, 0, 0.26)' : 'rgba(255, 255, 255, 0.3)',
+      disabledBackground: mode === 'light' ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)'
+    }
   },
   typography: {
     fontFamily: '"Inter", "Roboto Mono", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace',

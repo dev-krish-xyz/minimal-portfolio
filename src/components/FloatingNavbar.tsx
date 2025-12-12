@@ -16,73 +16,94 @@ interface NavItem {
 
 const FloatingNav = styled(Box)(({ theme }) => ({
   position: 'fixed',
-  bottom: theme.spacing(2),
+  bottom: 20,
   left: '50%',
   transform: 'translateX(-50%)',
   background: theme.palette.mode === 'light'
-    ? 'rgba(248, 249, 250, 0.95)'
-    : 'rgba(26, 26, 26, 0.95)',
+    ? 'rgba(255, 255, 255, 0.95)'
+    : 'rgba(30, 30, 30, 0.95)',
   backdropFilter: 'blur(20px)',
-  border: `1px solid ${theme.palette.divider}`,
+  WebkitBackdropFilter: 'blur(20px)',
+  border: `2px solid ${theme.palette.divider}`,
   borderRadius: '50px',
-  padding: theme.spacing(0.75, 1),
+  padding: theme.spacing(1, 1.5),
   display: 'flex',
   alignItems: 'center',
-  gap: theme.spacing(0.5),
+  justifyContent: 'center',
+  gap: theme.spacing(1),
   boxShadow: theme.palette.mode === 'light'
-    ? '0 8px 32px rgba(0, 0, 0, 0.15)'
-    : '0 8px 32px rgba(0, 0, 0, 0.5)',
+    ? '0 8px 32px rgba(0, 0, 0, 0.12)'
+    : '0 8px 32px rgba(0, 0, 0, 0.6)',
   zIndex: 1000,
   transition: 'all 0.3s ease',
-  maxWidth: '90vw',
-  overflowX: 'auto',
-  '&::-webkit-scrollbar': {
-    display: 'none'
-  },
+  maxWidth: 'calc(100vw - 32px)',
+  width: 'auto',
   '&:hover': {
     boxShadow: theme.palette.mode === 'light'
-      ? '0 12px 40px rgba(0, 0, 0, 0.2)'
-      : '0 12px 40px rgba(0, 0, 0, 0.6)',
-    transform: 'translateX(-50%) translateY(-2px)'
+      ? '0 12px 40px rgba(0, 0, 0, 0.18)'
+      : '0 12px 40px rgba(0, 0, 0, 0.7)',
+    transform: 'translateX(-50%) translateY(-3px)'
+  },
+  [theme.breakpoints.down('md')]: {
+    bottom: 16,
+    padding: theme.spacing(0.75, 1.25),
+    gap: theme.spacing(0.75),
+    maxWidth: 'calc(100vw - 24px)'
   },
   [theme.breakpoints.down('sm')]: {
-    bottom: theme.spacing(1.5),
-    padding: theme.spacing(0.5, 0.75),
-    gap: theme.spacing(0.25)
+    bottom: 12,
+    padding: theme.spacing(0.6, 1),
+    gap: theme.spacing(0.5),
+    maxWidth: 'calc(100vw - 16px)',
+    borderWidth: '1.5px'
   }
 }));
 
 const NavButton = styled(IconButton)<{ active?: boolean }>(({ theme, active }) => ({
   width: 48,
   height: 48,
+  minWidth: 48,
+  minHeight: 48,
   borderRadius: '50%',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   flexShrink: 0,
+  padding: 0,
   color: active 
-    ? theme.palette.background.default 
+    ? theme.palette.mode === 'light' ? '#ffffff' : '#121212'
     : theme.palette.text.secondary,
   background: active 
-    ? theme.palette.text.primary 
+    ? theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
     : 'transparent',
   '& .MuiSvgIcon-root': {
     fontSize: '1.3rem'
   },
   '&:hover': {
     background: active 
-      ? theme.palette.text.primary 
+      ? theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
       : theme.palette.mode === 'light' 
-        ? 'rgba(0, 0, 0, 0.05)' 
-        : 'rgba(255, 255, 255, 0.05)',
+        ? 'rgba(0, 0, 0, 0.06)' 
+        : 'rgba(255, 255, 255, 0.08)',
     color: active 
-      ? theme.palette.background.default 
+      ? theme.palette.mode === 'light' ? '#ffffff' : '#121212'
       : theme.palette.text.primary,
-    transform: 'scale(1.1)'
+    transform: 'scale(1.08)'
+  },
+  [theme.breakpoints.down('md')]: {
+    width: 44,
+    height: 44,
+    minWidth: 44,
+    minHeight: 44,
+    '& .MuiSvgIcon-root': {
+      fontSize: '1.2rem'
+    }
   },
   [theme.breakpoints.down('sm')]: {
-    width: 40,
-    height: 40,
+    width: 38,
+    height: 38,
+    minWidth: 38,
+    minHeight: 38,
     '& .MuiSvgIcon-root': {
-      fontSize: '1.1rem'
+      fontSize: '1.05rem'
     }
   }
 }));

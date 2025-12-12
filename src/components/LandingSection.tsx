@@ -93,9 +93,9 @@ const SocialIconButton = styled('a')(({ theme }) => ({
   width: 48,
   height: 48,
   background: theme.palette.mode === 'light'
-    ? 'rgba(0, 0, 0, 0.04)'
-    : 'rgba(255, 255, 255, 0.04)',
-  border: `1px solid ${theme.palette.divider}`,
+    ? 'rgba(0, 0, 0, 0.05)'
+    : 'rgba(255, 255, 255, 0.08)',
+  border: `2px solid ${theme.palette.divider}`,
   borderRadius: '50%',
   color: theme.palette.text.primary,
   display: 'flex',
@@ -106,18 +106,19 @@ const SocialIconButton = styled('a')(({ theme }) => ({
   cursor: 'pointer',
   flexShrink: 0,
   '&:hover': {
-    background: theme.palette.text.primary,
-    color: theme.palette.background.default,
-    transform: 'translateY(-2px) scale(1.05)',
+    background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
+    color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
+    transform: 'translateY(-3px) scale(1.08)',
     boxShadow: theme.palette.mode === 'light'
       ? '0 8px 25px rgba(0, 0, 0, 0.15)'
-      : '0 8px 25px rgba(0, 0, 0, 0.5)'
+      : '0 8px 25px rgba(255, 255, 255, 0.1)',
+    borderColor: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
   },
   [theme.breakpoints.down('sm')]: {
     width: 40,
     height: 40,
     '& svg': {
-      fontSize: '1.25rem'
+      fontSize: '1.2rem'
     }
   }
 }));
@@ -125,7 +126,7 @@ const SocialIconButton = styled('a')(({ theme }) => ({
 const ActionButton = styled(Button)(({ theme }) => ({
   background: theme.palette.mode === 'light'
     ? 'rgba(0, 0, 0, 0.05)'
-    : 'rgba(255, 255, 255, 0.05)',
+    : 'rgba(255, 255, 255, 0.08)',
   border: `2px solid ${theme.palette.divider}`,
   borderRadius: '50px',
   padding: theme.spacing(1.5, 3),
@@ -135,35 +136,44 @@ const ActionButton = styled(Button)(({ theme }) => ({
   textTransform: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   '&:hover': {
-    background: theme.palette.text.primary,
-    color: theme.palette.background.default,
-    transform: 'translateY(-2px)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.2)',
-    borderColor: theme.palette.text.primary
+    background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
+    color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
+    transform: 'translateY(-3px)',
+    boxShadow: theme.palette.mode === 'light'
+      ? '0 8px 25px rgba(0, 0, 0, 0.2)'
+      : '0 8px 25px rgba(255, 255, 255, 0.1)',
+    borderColor: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1.25, 2.5),
+    fontSize: '0.9rem'
   }
 }));
 
 const DownloadButton = styled(Button)(({ theme }) => ({
-  background: theme.palette.text.primary,
-  border: `2px solid ${theme.palette.text.primary}`,
+  background: theme.palette.mode === 'light' ? '#000000' : '#e0e0e0',
+  border: `2px solid ${theme.palette.mode === 'light' ? '#000000' : '#e0e0e0'}`,
   borderRadius: '50px',
   padding: theme.spacing(1.5, 3.5),
-  color: theme.palette.background.default,
+  color: theme.palette.mode === 'light' ? '#ffffff' : '#121212',
   fontSize: '1rem',
   fontWeight: 600,
   textTransform: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+  boxShadow: theme.palette.mode === 'light'
+    ? '0 4px 12px rgba(0, 0, 0, 0.15)'
+    : '0 4px 12px rgba(224, 224, 224, 0.15)',
   '&:hover': {
     background: theme.palette.mode === 'light' 
-      ? theme.palette.grey[900] 
-      : theme.palette.grey[100],
+      ? '#1a1a1a' 
+      : '#f5f5f5',
     borderColor: theme.palette.mode === 'light' 
-      ? theme.palette.grey[900] 
-      : theme.palette.grey[100],
-    transform: 'translateY(-3px)',
+      ? '#1a1a1a' 
+      : '#f5f5f5',
+    transform: 'translateY(-4px)',
     boxShadow: theme.palette.mode === 'light'
-      ? '0 12px 35px rgba(0, 0, 0, 0.3)'
-      : '0 12px 35px rgba(255, 255, 255, 0.3)'
+      ? '0 12px 35px rgba(0, 0, 0, 0.25)'
+      : '0 12px 35px rgba(224, 224, 224, 0.25)'
   },
   [theme.breakpoints.down('sm')]: {
     padding: theme.spacing(1.25, 2.5),

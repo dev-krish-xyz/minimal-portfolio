@@ -33,6 +33,12 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('theme-mode', mode);
+      // Update body class for dark mode
+      if (mode === 'dark') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
     }
   }, [mode]);
 
