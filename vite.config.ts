@@ -4,12 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    react({
-      jsxImportSource: '@emotion/react',
-      babel: {
-        plugins: ['@emotion/babel-plugin']
-      }
-    })
+    react()
   ],
   server: {
     port: 3000,
@@ -17,20 +12,16 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    sourcemap: true, // Enable sourcemaps for debugging
+    sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          mui: ['@mui/material', '@mui/icons-material'],
-          emotion: ['@emotion/react', '@emotion/styled', '@emotion/cache']
-        }
+        manualChunks: undefined
       }
     }
   },
   base: '/',
-  resolve: {
-    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json']
+  optimizeDeps: {
+    include: ['@emotion/react', '@emotion/styled', '@mui/material', '@mui/icons-material']
   }
 })

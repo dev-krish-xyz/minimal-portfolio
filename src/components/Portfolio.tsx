@@ -1,42 +1,25 @@
-import { type FC, Suspense, lazy } from 'react';
-import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
+import { type FC } from 'react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from '../theme';
-
-// Lazy load components for better error tracking
-const LandingSection = lazy(() => import('./LandingSection'));
-const EducationSection = lazy(() => import('./EducationSection'));
-const TechnicalSkillsSection = lazy(() => import('./TechnicalSkillsSection'));
-const ProjectsSection = lazy(() => import('./ProjectsSection'));
-const CertificationsSection = lazy(() => import('./CertificationsSection'));
-const ContactSection = lazy(() => import('./ContactSection'));
-const FloatingNavbar = lazy(() => import('./FloatingNavbar'));
-
-const LoadingFallback = () => (
-  <Box
-    sx={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      minHeight: '100vh'
-    }}
-  >
-    <CircularProgress />
-  </Box>
-);
+import LandingSection from './LandingSection';
+import EducationSection from './EducationSection';
+import TechnicalSkillsSection from './TechnicalSkillsSection';
+import ProjectsSection from './ProjectsSection';
+import CertificationsSection from './CertificationsSection';
+import ContactSection from './ContactSection';
+import FloatingNavbar from './FloatingNavbar';
 
 const Portfolio: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Suspense fallback={<LoadingFallback />}>
-        <LandingSection />
-        <EducationSection />
-        <TechnicalSkillsSection />
-        <ProjectsSection />
-        <CertificationsSection />
-        <ContactSection />
-        <FloatingNavbar />
-      </Suspense>
+      <LandingSection />
+      <EducationSection />
+      <TechnicalSkillsSection />
+      <ProjectsSection />
+      <CertificationsSection />
+      <ContactSection />
+      <FloatingNavbar />
     </ThemeProvider>
   );
 };
