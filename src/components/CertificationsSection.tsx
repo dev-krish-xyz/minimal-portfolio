@@ -27,7 +27,7 @@ const certifications = [
     issuer: "Oracle University",
     date: "October 2025",
     description: "Learn the fundamentals of LLMs and Generative AI on OCI, covering model architectures, fine-tuning, and prompt engineering. Build and deploy a LangChain-based chatbot using RAG, vector databases, and semantic search on OCI.",
-    image: cert,
+    image: cert ,
     imageAlt: "nothing",
     credentialUrl: "https://mylearn.oracle.com",
     skills: ["GenAI", "Transformers", "Langchain", "RAG", "fine-tuning", "Vector DB"]

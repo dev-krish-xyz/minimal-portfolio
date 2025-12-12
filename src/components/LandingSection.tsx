@@ -8,7 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import DownloadOutlinedIcon from '@mui/icons-material/DownloadOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import kalpa from "../images/Picsart_25-11-03_12-42-12-632.jpg";
+import kalpa from "../images/profile_new.jpeg"
 
 const LandingContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
