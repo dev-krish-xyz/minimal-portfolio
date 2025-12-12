@@ -1,30 +1,34 @@
-import { type FC } from 'react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import { CacheProvider } from '@emotion/react';
-import createCache from '@emotion/cache';
+import { type FC, Suspense, lazy } from 'react';
+import { ThemeProvider, CssBaseline, Box, CircularProgress } from '@mui/material';
 import theme from '../theme';
-import LandingSection from './LandingSection';
-import EducationSection from './EducationSection';
-import TechnicalSkillsSection from './TechnicalSkillsSection';
-import ProjectsSection from './ProjectsSection';
-import CertificationsSection from './CertificationsSection';
-import ContactSection from './ContactSection';
-import FloatingNavbar from './FloatingNavbar';
 
-const createEmotionCache = () => {
-  return createCache({
-    key: "mui",
-    prepend: true,
-  });
-};
+// Lazy load components for better error tracking
+const LandingSection = lazy(() => import('./LandingSection'));
+const EducationSection = lazy(() => import('./EducationSection'));
+const TechnicalSkillsSection = lazy(() => import('./TechnicalSkillsSection'));
+const ProjectsSection = lazy(() => import('./ProjectsSection'));
+const CertificationsSection = lazy(() => import('./CertificationsSection'));
+const ContactSection = lazy(() => import('./ContactSection'));
+const FloatingNavbar = lazy(() => import('./FloatingNavbar'));
 
-const emotionCache = createEmotionCache();
+const LoadingFallback = () => (
+  <Box
+    sx={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh'
+    }}
+  >
+    <CircularProgress />
+  </Box>
+);
 
 const Portfolio: FC = () => {
   return (
-    <CacheProvider value={emotionCache}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Suspense fallback={<LoadingFallback />}>
         <LandingSection />
         <EducationSection />
         <TechnicalSkillsSection />
@@ -32,8 +36,8 @@ const Portfolio: FC = () => {
         <CertificationsSection />
         <ContactSection />
         <FloatingNavbar />
-      </ThemeProvider>
-    </CacheProvider>
+      </Suspense>
+    </ThemeProvider>
   );
 };
 
