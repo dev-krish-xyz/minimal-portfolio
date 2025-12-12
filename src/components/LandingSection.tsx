@@ -16,9 +16,13 @@ const LandingContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   background: `linear-gradient(135deg, ${theme.palette.background.default} 0%, ${theme.palette.grey[50]} 50%, ${theme.palette.background.default} 100%)`,
-  padding: theme.spacing(4),
+  padding: theme.spacing(3),
   position: 'relative',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2),
+    minHeight: 'calc(100vh - 80px)'
+  },
   '&::before': {
     content: '""',
     position: 'absolute',
@@ -28,7 +32,7 @@ const LandingContainer = styled(Box)(({ theme }) => ({
     height: '100%',
     background: `radial-gradient(circle, ${theme.palette.grey[100]} 0%, transparent 70%)`,
     borderRadius: '50%',
-    opacity: 0.4,
+    opacity: theme.palette.mode === 'light' ? 0.4 : 0.2,
     animation: 'float 6s ease-in-out infinite'
   },
   '&::after': {
@@ -40,16 +44,20 @@ const LandingContainer = styled(Box)(({ theme }) => ({
     height: '80%',
     background: `radial-gradient(circle, ${theme.palette.grey[100]} 0%, transparent 70%)`,
     borderRadius: '50%',
-    opacity: 0.3,
+    opacity: theme.palette.mode === 'light' ? 0.3 : 0.15,
     animation: 'float 8s ease-in-out infinite reverse'
   }
 }));
 
-const LandingContent = styled(Stack)(() => ({
+const LandingContent = styled(Stack)(({ theme }) => ({
   textAlign: 'center',
   maxWidth: '700px',
+  width: '100%',
   position: 'relative',
-  zIndex: 1
+  zIndex: 1,
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '100%'
+  }
 }));
 
 const ProfileAvatar = styled(Avatar)(({ theme }) => ({
@@ -57,26 +65,37 @@ const ProfileAvatar = styled(Avatar)(({ theme }) => ({
   height: 250,
   margin: '0 auto',
   marginBottom: '2rem',
-  border: `5px solid ${theme.palette.grey[200]}`,
-  boxShadow: '0 12px 48px rgba(0, 0, 0, 0.12)',
+  border: `5px solid ${theme.palette.divider}`,
+  boxShadow: theme.palette.mode === 'light'
+    ? '0 12px 48px rgba(0, 0, 0, 0.12)'
+    : '0 12px 48px rgba(0, 0, 0, 0.5)',
   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
   display: 'block',
   '&:hover': {
     transform: 'scale(1.08)',
-    boxShadow: '0 16px 56px rgba(0, 0, 0, 0.18)',
+    boxShadow: theme.palette.mode === 'light'
+      ? '0 16px 56px rgba(0, 0, 0, 0.18)'
+      : '0 16px 56px rgba(0, 0, 0, 0.6)',
     borderColor: theme.palette.grey[300]
   },
-  [theme.breakpoints.down('sm')]: {
+  [theme.breakpoints.down('md')]: {
     width: 200,
     height: 200
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: 150,
+    height: 150,
+    marginBottom: '1.5rem'
   }
 }));
 
 const SocialIconButton = styled('a')(({ theme }) => ({
   width: 48,
   height: 48,
-  background: 'rgba(0, 0, 0, 0.04)',
-  border: `1px solid ${theme.palette.grey[300]}`,
+  background: theme.palette.mode === 'light'
+    ? 'rgba(0, 0, 0, 0.04)'
+    : 'rgba(255, 255, 255, 0.04)',
+  border: `1px solid ${theme.palette.divider}`,
   borderRadius: '50%',
   color: theme.palette.text.primary,
   display: 'flex',
@@ -85,17 +104,29 @@ const SocialIconButton = styled('a')(({ theme }) => ({
   textDecoration: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   cursor: 'pointer',
+  flexShrink: 0,
   '&:hover': {
     background: theme.palette.text.primary,
     color: theme.palette.background.default,
     transform: 'translateY(-2px) scale(1.05)',
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.15)'
+    boxShadow: theme.palette.mode === 'light'
+      ? '0 8px 25px rgba(0, 0, 0, 0.15)'
+      : '0 8px 25px rgba(0, 0, 0, 0.5)'
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: 40,
+    height: 40,
+    '& svg': {
+      fontSize: '1.25rem'
+    }
   }
 }));
 
 const ActionButton = styled(Button)(({ theme }) => ({
-  background: 'rgba(0, 0, 0, 0.05)',
-  border: `2px solid ${theme.palette.grey[300]}`,
+  background: theme.palette.mode === 'light'
+    ? 'rgba(0, 0, 0, 0.05)'
+    : 'rgba(255, 255, 255, 0.05)',
+  border: `2px solid ${theme.palette.divider}`,
   borderRadius: '50px',
   padding: theme.spacing(1.5, 3),
   color: theme.palette.text.primary,
@@ -123,10 +154,20 @@ const DownloadButton = styled(Button)(({ theme }) => ({
   textTransform: 'none',
   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
   '&:hover': {
-    background: theme.palette.grey[900],
-    borderColor: theme.palette.grey[900],
+    background: theme.palette.mode === 'light' 
+      ? theme.palette.grey[900] 
+      : theme.palette.grey[100],
+    borderColor: theme.palette.mode === 'light' 
+      ? theme.palette.grey[900] 
+      : theme.palette.grey[100],
     transform: 'translateY(-3px)',
-    boxShadow: '0 12px 35px rgba(0, 0, 0, 0.3)'
+    boxShadow: theme.palette.mode === 'light'
+      ? '0 12px 35px rgba(0, 0, 0, 0.3)'
+      : '0 12px 35px rgba(255, 255, 255, 0.3)'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1.25, 2.5),
+    fontSize: '0.9rem'
   }
 }));
 

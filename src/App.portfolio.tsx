@@ -1,12 +1,15 @@
 import { type FC } from 'react';
+import { ThemeProvider } from './contexts/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import Portfolio from './components/Portfolio';
 
 const App: FC = () => {
   return (
-    <ErrorBoundary>
-      <Portfolio />
-    </ErrorBoundary>
+    <ThemeProvider>
+      <ErrorBoundary>
+        <Portfolio />
+      </ErrorBoundary>
+    </ThemeProvider>
   );
 };
 

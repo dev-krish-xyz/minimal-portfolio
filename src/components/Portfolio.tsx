@@ -1,6 +1,5 @@
 import { type FC } from 'react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from '../theme';
+import { CssBaseline } from '@mui/material';
 import LandingSection from './LandingSection';
 import EducationSection from './EducationSection';
 import TechnicalSkillsSection from './TechnicalSkillsSection';
@@ -8,11 +7,13 @@ import ProjectsSection from './ProjectsSection';
 import CertificationsSection from './CertificationsSection';
 import ContactSection from './ContactSection';
 import FloatingNavbar from './FloatingNavbar';
+import ThemeToggle from './ThemeToggle';
 
 const Portfolio: FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
+      <ThemeToggle />
       <LandingSection />
       <EducationSection />
       <TechnicalSkillsSection />
@@ -20,7 +21,7 @@ const Portfolio: FC = () => {
       <CertificationsSection />
       <ContactSection />
       <FloatingNavbar />
-    </ThemeProvider>
+    </>
   );
 };
 

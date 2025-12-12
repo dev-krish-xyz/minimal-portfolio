@@ -130,7 +130,6 @@ git commit -m "Fix: Comprehensive deployment fixes"
 git push origin main
 # Vercel will auto-deploy
 ```
-
 ### Method 2: Manual Deploy
 ```bash
 # Install Vercel CLI
